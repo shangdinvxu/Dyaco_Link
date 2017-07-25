@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/clock_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:src="@mipmap/point_2" />
+
+    <ImageView
+        android:id="@+id/clock_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="45dp"
+        android:src="@mipmap/point_1" />
+
+    <ImageView
+        android:id="@+id/clock_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="290dp"
+        android:layout_marginTop="85dp"
+        android:src="@mipmap/point_1" />
+
+    <ImageView
+        android:id="@+id/clock_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="40dp"
+        android:src="@mipmap/point_2" />
+
+    <ImageView
+        android:id="@+id/clock_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="290dp"
+        android:layout_marginTop="215dp"
+        android:src="@mipmap/point_1" />
+
+    <ImageView
+        android:id="@+id/clock_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="260dp"
+        android:src="@mipmap/point_1" />
+
+    <ImageView
+        android:id="@+id/clock_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="280dp"
+        android:src="@mipmap/point_2" />
+
+    <ImageView
+        android:id="@+id/clock_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="260dp"
+        android:src="@mipmap/point_1" />
+
+    <ImageView
+        android:id="@+id/clock_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="83dp"
+        android:layout_marginTop="215dp"
+        android:src="@mipmap/point_1" />
+
+
+    <ImageView
+        android:id="@+id/clock_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="320dp"
+        android:src="@mipmap/point_2" />
+
+
+    <ImageView
+        android:id="@+id/clock_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="83dp"
+        android:layout_marginTop="85dp"
+        android:src="@mipmap/point_1" />
+
+    <ImageView
+        android:id="@+id/clock_11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="45dp"
+        android:src="@mipmap/point_1" />
+
+
+</RelativeLayout>

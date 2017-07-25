@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/portalLinearlayout">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+        <include layout="@layout/tw_main_time_xml"></include>
+        <include layout="@layout/tw_main_clock1"></include>
+    </RelativeLayout>
+    <!-- 下面四个小界面-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:background="@mipmap/un484px"
+        >
+
+        <!-- 步数和卡路里-->
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:layout_weight="1"
+           android:orientation="horizontal">
+           <!-- 步数-->
+           <RelativeLayout
+               android:id="@+id/Rl_step"
+               android:layout_weight="1"
+               android:layout_width="0dp"
+               android:layout_height="match_parent">
+
+               <ImageView
+                  style="@style/main_UI_Image"
+                   android:src="@mipmap/stepicon"/>
+
+               <android.support.v7.widget.AppCompatTextView
+                   android:text="@string/Step"
+                  style="@style/main_UI_Text"/>
+               <android.support.v7.widget.AppCompatTextView
+                   android:id="@+id/main_tv_Step"
+                    style="@style/main_UI_text_set"
+                   />
+
+
+
+           </RelativeLayout>
+
+           <!-- 卡路里-->
+           <RelativeLayout
+               android:id="@+id/Rl_calories"
+               android:layout_weight="1"
+               android:layout_width="0dp"
+               android:layout_height="match_parent">
+
+               <ImageView
+                   style="@style/main_UI_Image"
+                   android:src="@mipmap/caloriesicon"/>
+
+               <android.support.v7.widget.AppCompatTextView
+                   android:text="@string/Calories"
+                   style="@style/main_UI_Text"/>
+               <TextView
+                   android:id="@+id/main_tv_Calories"
+                   style="@style/main_UI_text_set"/>
+               <android.support.v7.widget.AppCompatTextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textSize="12sp"
+                   android:layout_marginLeft="2dp"
+                   android:layout_marginBottom="7dp"
+                   android:layout_alignBottom="@id/main_tv_Calories"
+                   android:layout_toRightOf="@id/main_tv_Calories"
+                   android:text="kcal"
+                   />
+
+           </RelativeLayout>
+
+       </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:src="@mipmap/line695px"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <!-- 距离-->
+
+            <RelativeLayout
+                android:id="@+id/Rl_distance"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    style="@style/main_UI_Image"
+                    android:src="@mipmap/distanceicon"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:text="@string/Distance"
+                    style="@style/main_UI_Text"/>
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/main_tv_Distance"
+                    style="@style/main_UI_text_set"/>
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginBottom="7dp"
+                    android:id="@+id/distanceUnit"
+                    android:layout_alignBottom="@id/main_tv_Distance"
+                    android:layout_toRightOf="@id/main_tv_Distance"
+                    android:text="km"
+                    />
+
+
+
+            </RelativeLayout>
+
+            <!-- Sleep-->
+            <RelativeLayout
+                android:id="@+id/Rl_sleep"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    style="@style/main_UI_Image"
+                    android:src="@mipmap/sleepicon"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:text="@string/Sleep"
+                    style="@style/main_UI_Text"/>
+
+                <android.support.v7.widget.AppCompatTextView
+
+                    android:id="@+id/main_tv_Sleep"
+                    style="@style/main_UI_text_set"
+                    android:text="0"/>
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginBottom="7dp"
+                    android:id="@+id/sleepUnit"
+                    android:layout_alignBottom="@id/main_tv_Sleep"
+                    android:layout_toRightOf="@id/main_tv_Sleep"
+                    android:text="hr"
+                    />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

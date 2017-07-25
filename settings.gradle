@@ -1,0 +1,3 @@
+include ':app', ':sqlitegreendao', 'StickyListHeadersListViewlibrary'
+include ':ViewPagerIndicator', ':PullToRefreshLibrary'
+include ':linkloving_ble4.0_lib',':onkeyshare'

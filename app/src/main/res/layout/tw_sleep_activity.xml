@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/step_activity_layout">
+
+    <RelativeLayout
+        android:id="@+id/tw_sleep_top"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6">
+
+        <include layout="@layout/tw_sleep_top"></include>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_gravity="center_vertical"
+        android:id="@+id/step_tv_date"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="@color/lightgrey"
+        android:text=""
+        android:gravity="center"
+        android:textColor="@color/highgrey"
+        android:textSize="17sp" />
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:id="@+id/step_middle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/tw_sleep_buttomfragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        >
+
+        <RadioGroup
+            android:id="@+id/tw_sleep_buttom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/un100px"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            >
+            <RadioButton
+                android:id="@+id/sleep_button_day"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:gravity="center"
+                android:drawableTop="@mipmap/d_off_72px"
+                android:text="@string/Day_View"
+                android:onClick="onDayViewClicked"
+                android:textColor="@color/white" />
+            <RadioButton
+                android:id="@+id/sleep_button_week"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:drawableTop="@mipmap/w_off_72px"
+                android:text="@string/Week_View"
+                android:onClick="onWeekViewClicked"
+                android:textColor="@color/white" />
+            <RadioButton
+                android:id="@+id/sleep_button_month"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:drawableTop="@mipmap/m_off_72px"
+                android:text="@string/Month_View"
+                android:onClick="onMonthViewClicked"
+                android:textColor="@color/white" />
+        </RadioGroup>
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>

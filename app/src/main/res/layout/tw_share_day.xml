@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:id="@+id/screenhot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+            android:id="@+id/groups_time"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="#EEEEEE"
+            android:gravity="center"
+            android:text="2016/04/25 am.6:00"
+
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="@mipmap/un484px"
+            android:orientation="vertical"
+
+            >
+            <!-- 步数和卡路里-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+                <!-- 步数-->
+                <RelativeLayout
+                    android:id="@+id/Rl_step"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/main_UI_Image"
+                        android:src="@mipmap/stepicon" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/main_UI_Text"
+                        android:text="@string/Step" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/groups_tv_Step"
+                        style="@style/groups_UI_text_set"
+                        android:textSize="24sp"/>
+
+                </RelativeLayout>
+                <!-- 卡路里-->
+                <RelativeLayout
+                    android:id="@+id/Rl_calories"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/main_UI_Image"
+                        android:layout_marginLeft="5dp"
+                        android:src="@mipmap/caloriesicon" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/main_UI_Text"
+                        android:text="@string/Calories" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/groups_tv_Calories"
+                        style="@style/groups_UI_text_set"
+                        android:textSize="24sp"
+                        />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/groups_tv_Calories"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20dp"
+                        android:text="kcal"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:src="@mipmap/line695px" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal"
+                >
+                <!-- 距离-->
+                <RelativeLayout
+                    android:id="@+id/Rl_distance"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/main_UI_Image"
+                        android:src="@mipmap/distanceicon" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/main_UI_Text"
+                        android:text="@string/Distance" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/groups_tv_Distance"
+                        style="@style/main_UI_text_set"
+                        android:layout_marginTop="38dp"
+                        android:textSize="24sp"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/groups_tv_Distance"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20dp"
+                        android:text="km"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+                <!-- Duration-->
+                <RelativeLayout
+                    android:id="@+id/Rl_sleep"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/main_UI_Image"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/durationicon" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/main_UI_Text"
+                        android:text="@string/sporttime" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/main_tv_Duration"
+                        style="@style/main_UI_text_set"
+                        android:layout_marginTop="50dp"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+        <EditText
+            android:id="@+id/shareEditText"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:layout_marginTop="20dp"
+            android:padding="15dp"
+            android:background="@color/lightgrey"
+            android:hint="@string/Leaveamessage"
+            android:gravity="start"
+            android:textSize="23sp"
+            />
+        </LinearLayout>
+            <Button
+                android:id="@+id/sharebutton"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/share"
+                android:textAllCaps="false"
+                android:textSize="38sp"
+                android:textColor="@color/yellow"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/share_button_selector"
+                android:layout_width="300dp"
+                android:layout_height="70dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/un100px"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <RadioButton
+        android:id="@+id/step_button_day"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:button="@null"
+        android:gravity="center"
+        android:drawableTop="@mipmap/d_off_72px"
+        android:text="@string/Day_View"
+        android:onClick="onDayViewClicked"
+
+        android:textColor="@color/white" />
+
+    <RadioButton
+        android:id="@+id/step_button_week"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:button="@null"
+        android:gravity="center"
+        android:drawableTop="@mipmap/w_off_72px"
+        android:text="@string/Week_View"
+        android:onClick="onWeekViewClicked"
+        android:textColor="@color/white" />
+
+    <RadioButton
+        android:id="@+id/step_button_month"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:button="@null"
+        android:gravity="center"
+        android:drawableTop="@mipmap/m_off_72px"
+        android:text="@string/Month_View"
+        android:onClick="onMonthViewClicked"
+        android:textColor="@color/white" />
+
+    <RadioButton
+        android:id="@+id/step_button_year"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:button="@null"
+        android:gravity="center"
+        android:drawableTop="@mipmap/y_off_72px"
+        android:text="@string/Year_View"
+        android:onClick="onYearViewClicked"
+        android:textColor="@color/white" />
+
+</RadioGroup>

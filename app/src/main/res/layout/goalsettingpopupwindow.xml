@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/dismiss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/triangle" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/Goalsetting"
+            android:textColor="@color/blue"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/selectline_yellow" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/goalsteps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/Step"
+                android:textColor="@color/blue"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_alignBottom="@id/goalsteps"
+                android:id="@+id/steps_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="170dp"
+                android:layout_marginTop="10dp"
+                android:textSize="24sp"
+                android:text="2000"
+                android:textColor="@color/blue"
+                 />
+
+            <TextView
+                android:layout_alignBottom="@id/goalsteps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="280dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/steps"
+                android:textColor="@color/blue"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <SeekBar
+            android:id="@+id/stepsSeekbar"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:max="90000"
+            android:splitTrack="false" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/goaldistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="70dp"
+                android:text="@string/Distance"
+                android:textColor="@color/blue"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_alignBottom="@id/goaldistance"
+                android:id="@+id/distances_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="170dp"
+                android:text="1"
+                android:textColor="@color/blue"
+                android:layout_marginTop="10dp"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:layout_alignBottom="@id/goaldistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="280dp"
+                android:text="@string/unit_km"
+                android:textColor="@color/blue"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <SeekBar
+            android:id="@+id/DistanceBar"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:max="99"
+            android:splitTrack="false" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/goalka"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="70dp"
+                android:text="@string/goal_kcal"
+                android:textColor="@color/blue"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/calories_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="170dp"
+                android:layout_alignBottom="@id/goalka"
+                android:text="1000"
+                android:textColor="@color/blue"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_alignBottom="@id/goalka"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="280dp"
+                android:text="@string/goal_kcal"
+                android:textColor="@color/blue"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <SeekBar
+            android:id="@+id/caloriesBar"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:max="9000"
+            android:splitTrack="false" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightgrey"
+    >
+
+    <EditText
+        android:id="@+id/shareET"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="40dp"
+        android:background="@null"
+        android:hint="@string/Leaveamessage"
+        android:text=" "
+        android:layout_width="match_parent"
+        android:layout_weight="2"
+        android:layout_height="0dp" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:src="@mipmap/line695px"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"/>
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1.5"
+        android:layout_height="0dp">
+        <ImageView
+            android:clickable="true"
+            android:id="@+id/earthImageview"
+            android:layout_marginLeft="40dp"
+            android:layout_width="40dp"
+            android:layout_marginTop="4dp"
+            android:src="@mipmap/tw_location"
+            android:layout_height="40dp" />
+        <EditText
+            android:id="@+id/shareWhere"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="@color/lightgrey"
+        >
+        <Button
+            android:id="@+id/sharebutton"
+            android:layout_marginTop="0dp"
+            android:gravity="center"
+            android:text="@string/share"
+            android:textAllCaps="false"
+            android:textSize="30sp"
+            android:textColor="@color/yellow"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/share_button_selector"
+            android:layout_width="300dp"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
+        <LinearLayout
+            android:visibility="gone"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/lightgrey"
+            >
+
+            <ImageView
+                android:id="@+id/twitter_share"
+                android:clickable="true"
+                android:layout_marginLeft="35dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/twitter_selector"/>
+            <ImageView
+                android:id="@+id/instagram_share"
+                android:clickable="true"
+                android:layout_marginLeft="45dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/instagram_selector"/>
+            <ImageView
+                android:id="@+id/fb_share"
+                android:clickable="true"
+                android:layout_marginLeft="45dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/fb_selector"/>
+            <ImageView
+                android:id="@+id/google_share"
+                android:clickable="true"
+                android:layout_marginLeft="45dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/google_selector"/>
+        </LinearLayout>
+
+
+
+
+</LinearLayout>

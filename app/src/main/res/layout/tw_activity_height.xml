@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.linkloving.dyh08.logic.UI.height.HeightActivity">
+    
+    <RelativeLayout
+        android:background="@color/yellow_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:id="@+id/linerlayout"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/textft"
+                android:textColor="@color/white"
+                android:layout_alignParentBottom="true"
+                android:text="ft"
+                android:textSize="@dimen/m00_font_size_88pt"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/textUnitft"
+                android:textColor="@color/white"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10px"
+                android:text="ft"
+                android:layout_toLeftOf="@id/et_userHeight"
+                android:textSize="@dimen/m00_font_size_28pt"
+                android:layout_height="wrap_content" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/et_userHeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/white"
+                android:text="158"
+                android:textSize="@dimen/m00_font_size_88pt"/>
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/et_userHeight"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="10px"
+                android:layout_marginBottom="10px"
+                android:textColor="@color/white"
+                android:text="@string/unit_cm"
+                android:id="@+id/unit_cm"
+                android:textSize="@dimen/m00_font_size_28pt"/>
+
+
+
+        </LinearLayout>
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/linerlayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10px"
+            android:text="@string/Height"
+            android:textColor="@color/white"
+            android:textSize="@dimen/m00_font_size_28pt"/>
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+            <com.linkloving.dyh08.logic.UI.launch.view.ScaleRulerView
+                android:id="@+id/scaleWheelView_height"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:background="@android:color/white" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/yellow_title">
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:src="@mipmap/widget_title_btn_back_normal"/>
+
+
+            </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

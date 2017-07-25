@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+     <FrameLayout
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+         android:layout_weight="6"
+         android:id="@+id/google_map_framelayout"
+         ></FrameLayout>
+        <!--
+    <fragment
+        android:id="@+id/map"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"/>-->
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        >
+        <RadioButton
+            android:gravity="center"
+            android:textSize="27sp"
+            android:id="@+id/start"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textAllCaps="false"
+            android:text="@string/start_trace"
+            android:background="@drawable/mapbuttonselector"
+            android:button="@null"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:gravity="center"
+            android:textSize="27sp"
+            android:id="@+id/stop"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textAllCaps="false"
+            android:text="@string/stop_trace"
+            android:button="@null"
+            android:background="@drawable/mapbuttonselector"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/first_middle"
+            android:visibility="visible"
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="#55000000"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="@string/Attention"
+                android:layout_marginTop="15dp"
+                />
+            <ImageView
+                android:layout_width="280dp"
+                android:layout_height="1dp"
+                android:src="@mipmap/line"
+                />
+            <!--   <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/Gps"
+                   android:textColor="@color/white"
+                   android:textSize="18sp"
+                   android:layout_marginTop="20dp"
+                   />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/must_be"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"
+                />
+            <Button
+                android:layout_marginTop="20dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/gpsokbutton"
+                android:id="@+id/OK_btn"
+                android:textAllCaps="false"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="#55000000"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:id="@+id/second_middle"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Attention"
+                android:textColor="@color/yellow"
+                android:textSize="26sp"
+                android:textStyle="italic"
+                android:layout_marginTop="10dp"
+                />
+            <ImageView
+                android:layout_width="280dp"
+                android:layout_height="1dp"
+                android:src="@mipmap/line"
+                android:layout_marginTop="4dp"
+                />
+            <TextView
+                android:id="@+id/chronometer"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:text="00:00:00"
+                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+</FrameLayout>

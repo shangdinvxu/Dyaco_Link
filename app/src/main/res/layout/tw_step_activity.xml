@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/step_activity_layout">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6">
+
+        <include layout="@layout/tw_step_top"></include>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/step_tv_date"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_gravity="center_vertical"
+        android:background="@color/lightgrey"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/highgrey"
+        android:textSize="17sp" />
+
+    <RelativeLayout
+        android:id="@+id/step_middle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4">
+
+   <!--     <include layout="@layout/tw_day_view_fragment"></include>-->
+        <!--<include layout="@layout/tw_day_view_fragment"></include>-->
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <include layout="@layout/tw_step_buttom"></include>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/week_barchartView_linear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/anchor_button"
+            />
+
+        <com.linkloving.dyh08.ViewUtils.barchartview.DayBarChartView
+            android:layout_marginTop="-10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/day_barchartView"
+            >
+
+        </com.linkloving.dyh08.ViewUtils.barchartview.DayBarChartView>
+    </LinearLayout>
+
+</LinearLayout>

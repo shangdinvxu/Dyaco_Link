@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_peosoninfo"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light"
+                android:gravity="center"
+                android:paddingBottom="90px"
+                android:paddingTop="90px">
+
+                <com.linkloving.dyh08.logic.utils.CircleImageView
+                    android:id="@+id/user_head"
+                    android:layout_width="200px"
+                    android:layout_height="200px"
+                    android:contentDescription="@string/imageView"
+                    android:src="@mipmap/default_avatar_m"
+                    app:border_color="@color/white"
+                    app:border_width="2dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="800px"
+                android:background="@color/white"
+                android:orientation="vertical">
+                <!--昵称栏-->
+                <LinearLayout
+                   android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="50px"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="30px"
+                        android:layout_weight="2"
+                        android:gravity="center|end"
+                        android:text="@string/setting_name"
+                        android:textColor="@color/yellow_title"
+                        android:textSize="@dimen/m00_font_size_24pt" />
+
+                    <EditText
+                        android:id="@+id/edit_nickname"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:maxLength="10"
+                        android:background="@null"
+                        android:hint="@string/setting_name_hint"
+                        android:singleLine="true" />
+                </LinearLayout>
+                <!--性别-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="30px"
+                        android:layout_weight="2"
+                        android:gravity="center|end"
+                        android:text="@string/setting_sex"
+                        android:textColor="@color/yellow_title"
+                        android:textSize="@dimen/m00_font_size_24pt" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.AppCompatRadioButton
+                            android:id="@+id/radio_man"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/setting_man" />
+
+                        <android.support.v7.widget.AppCompatRadioButton
+                            android:id="@+id/radio_woman"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/setting_woman" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+                <!--生日-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="30px"
+                        android:layout_weight="2"
+                        android:gravity="center|end"
+                        android:text="@string/setting_bir"
+                        android:textColor="@color/yellow_title"
+                        android:textSize="@dimen/m00_font_size_24pt" />
+
+                    <TextView
+                        android:id="@+id/birthday"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:text="00:00:00"
+                        android:textColor="@color/yellow_title"
+                        android:textSize="@dimen/m00_font_size_24pt"
+                        />
+
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/edit_year"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="5px"
+                            android:background="@null"
+                            android:inputType="number"
+                            android:hint="@string/setting_yyyy"
+                            android:maxLength="4"
+                            android:singleLine="true" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="5px"
+                            android:layout_marginStart="5px"
+                            android:text="/"
+                            android:textColor="@color/black" />
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:inputType="number"
+                            android:id="@+id/edit_mon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="5px"
+                            android:background="@null"
+                            android:hint="@string/setting_mm"
+                            android:maxLength="2"
+                            android:singleLine="true" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="5px"
+                            android:layout_marginStart="5px"
+                            android:text="/"
+                            android:textColor="@color/black" />
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:inputType="number"
+                            android:id="@+id/edit_day"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:hint="@string/setting_day"
+                            android:maxLength="2"
+                            android:singleLine="true" />
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!--穿戴方式-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="30px"
+                        android:layout_weight="2"
+                        android:gravity="center|end"
+                        android:text="@string/setting_wear"
+                        android:textColor="@color/yellow_title"
+                        android:textSize="@dimen/m00_font_size_24pt" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.AppCompatRadioButton
+                            android:id="@+id/radio_left"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/setting_wear_l" />
+
+                        <android.support.v7.widget.AppCompatRadioButton
+                            android:id="@+id/radio_right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/setting_wear_r" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+                久坐提醒
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="30px"
+                        android:layout_weight="2"
+                        android:gravity="center|end"
+                        android:text="@string/setting_rem"
+                        android:textColor="@color/yellow_title"
+                        android:textSize="@dimen/m00_font_size_24pt" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.AppCompatRadioButton
+                            android:id="@+id/radio_rem_on"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/setting_rem_on" />
+
+                        <android.support.v7.widget.AppCompatRadioButton
+                            android:id="@+id/radio_rem_off"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/setting_rem_off" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="50px"
+                >
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btn_enter"
+                    android:layout_width="300px"
+                    android:layout_height="300px"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/setting_enter"
+                    android:background="@drawable/setting_enter"/>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

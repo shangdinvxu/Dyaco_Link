@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:lines="2"
+        android:text="Open The Bluetooth And Link Equipment"
+        android:textColor="@color/blue"
+        android:textSize="30dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:src="@mipmap/bluetooth" />
+
+        <ImageView
+            android:id="@+id/blue_middle_changeIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/link" />
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/wristband" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Link Equipment"
+        android:textColor="@color/blue_text"
+        android:textSize="28sp" />
+
+    <ListView
+        android:id="@+id/bluetooth_list"
+        android:layout_width="260dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:dividerHeight="0dp"></ListView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/Reconnect"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:background="@color/button_gray"
+            android:gravity="center"
+            >
+            <TextView
+                android:textColor="@color/black"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="@string/Reconnect"
+                />
+            <TextView
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12345"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:layout_marginTop="2dp"
+                android:textSize="12sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/Disconnect"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:background="@color/button_gray"
+            >
+            <TextView
+                android:textColor="@color/black"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="@string/Disconnect"
+                />
+            <TextView
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12345"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:layout_marginTop="2dp"
+                android:textSize="12sp"
+                />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

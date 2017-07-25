@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yellow_title"
+    android:gravity="center_horizontal"
+    >
+
+    <TextView
+        style="@style/loginTextview"
+        android:layout_marginLeft="90dp"
+        android:text="@string/WearingStyles"
+        />
+    <ImageView
+        android:id="@+id/lefthand"
+        android:layout_marginTop="140dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginLeft="60dp"
+        android:background="@mipmap/left"
+        />
+    <TextView
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:layout_marginLeft="18dp"
+        android:layout_alignLeft="@id/lefthand"
+        android:layout_marginTop="230dp"
+        android:text="@string/left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+    <ImageView
+        android:id="@+id/righthand"
+        android:layout_marginTop="140dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_toRightOf="@+id/lefthand"
+        android:layout_marginLeft="60dp"
+        android:background="@mipmap/righthand"
+        />
+    <TextView
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:layout_marginLeft="16dp"
+        android:layout_alignLeft="@id/righthand"
+        android:layout_marginTop="230dp"
+        android:text="@string/right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+
+
+    <ImageView
+        android:id="@+id/left"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@mipmap/nextpageleft"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        />
+
+
+    <ImageView
+        android:id="@+id/right"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@mipmap/nextpageright"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        />
+
+
+</RelativeLayout>

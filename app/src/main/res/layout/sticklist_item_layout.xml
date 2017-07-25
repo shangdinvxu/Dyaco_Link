@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    >
+
+    <AutoCompleteTextView
+
+        android:id="@+id/dataTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/yellow_title"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/gd_arrow_offset"
+        android:text="2016/04/25"
+        android:textSize="20sp"
+        android:background="@null"/>
+
+
+    <LinearLayout
+        android:id="@+id/msgLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_below="@id/dataTime">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <AutoCompleteTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Distance"
+                android:textColor="@color/step_data_gray"
+                android:textSize="@dimen/m00_font_size_22pt"
+                android:background="@null"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10.62 Km"
+                android:textColor="@color/yellow_title"
+                android:background="@null"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:orientation="vertical">
+
+            <AutoCompleteTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Duration"
+                android:textColor="@color/step_data_gray"
+                android:textSize="@dimen/m00_font_size_22pt"
+                android:background="@null"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01:15:03"
+                android:textColor="@color/yellow_title"
+                android:background="@null"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:orientation="vertical">
+
+            <AutoCompleteTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Avg.Speed"
+                android:textColor="@color/step_data_gray"
+                android:textSize="@dimen/m00_font_size_22pt"
+                android:background="@null"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/avgSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8.5 Km/h"
+                android:textColor="@color/yellow_title"
+                android:background="@null"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+
+
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/msgLayout"
+        android:layout_alignTop="@+id/dataTime"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        >
+<ImageView
+    android:id="@+id/mapState"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/mapon"
+    />
+
+        <ImageView
+            android:id="@+id/next"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/workout_details"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <ImageView
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/deleterecord"
+            /></RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:gravity="center_horizontal"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/dismiss"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/triangle"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/blue"
+        android:text="@string/personalPhoto"
+        />
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/selectline_yellow"
+        />
+        <LinearLayout
+            android:id="@+id/pop_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/deletePhoto"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="10dp"
+                android:background="@color/blue"
+                android:padding="10dp"
+                android:text="@string/user_info_delete_photo"
+                android:textAllCaps="false"
+                android:textColor="@color/yellow"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/takePhotoBtn"
+                android:textAllCaps="false"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/blue"
+                android:padding="10dp"
+                android:text="@string/user_info_take_photo"
+                android:textColor="@color/yellow"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/pickPhotoBtn"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="5dp"
+                android:background="@color/blue"
+                android:padding="10dp"
+                android:text="@string/user_info_choose_photo"
+                android:textColor="@color/yellow"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/cancelBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="5dp"
+                android:background="@color/blue"
+                android:padding="10dp"
+                android:text="@string/back"
+                android:textColor="@color/yellow"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+ </LinearLayout>
+
+
+</LinearLayout>

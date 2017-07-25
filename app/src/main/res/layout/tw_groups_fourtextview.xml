@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="110dp"
+            android:text="Avg. pace" />
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/AvgPace"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="7:04 /km"
+            android:textColor="#1D517D"
+            />
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:src="@mipmap/line695px"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"/>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="103dp"
+            android:text="Avg. Speed" />
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/AvgSpeed"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="7:04 /km"
+            android:textColor="#1D517D"
+            />
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:src="@mipmap/line695px"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"/>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="75dp"
+            android:text="Avg. Heart Rate" />
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/AvgHeart"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="65 /bpm"
+            android:textColor="#1D517D"
+            />
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:src="@mipmap/line695px"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"/>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="72dp"
+            android:text="Max. Heart Rate" />
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/MaxHeart"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="85 /bpm"
+            android:textColor="#1D517D"
+            />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/shareIcon"
+        android:layout_gravity="center"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/tw_share_selector"
+        android:clickable="true"
+        />
+
+</LinearLayout>

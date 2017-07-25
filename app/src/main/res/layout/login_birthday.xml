@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yellow_title"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/birthday"
+        style="@style/loginTextview"
+        android:layout_marginLeft="130dp"
+        android:text="@string/Birthday" />
+
+    <TextView
+        android:id="@+id/year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/birthday"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/year"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/yearET"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@id/year"
+        android:layout_marginLeft="50dp"
+        android:layout_toRightOf="@id/year"
+        android:background="@color/white"
+        android:gravity="center"
+        android:hint="@string/yyyy"
+        android:maxLength="4"
+        android:numeric="integer"
+        android:textColorHint="@color/highgrey" />
+
+    <TextView
+        android:id="@+id/month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/year"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/month"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/monthET"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@id/yearET"
+        android:layout_alignTop="@id/month"
+        android:layout_toRightOf="@id/month"
+        android:background="@color/white"
+        android:gravity="center"
+        android:hint="@string/mm"
+        android:maxLength="2"
+        android:numeric="integer"
+        android:textColorHint="@color/highgrey" />
+
+    <TextView
+        android:id="@+id/day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/month"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/day"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/dayET"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@id/yearET"
+        android:layout_alignTop="@id/day"
+        android:layout_toRightOf="@id/day"
+        android:background="@color/white"
+        android:gravity="center"
+        android:hint="@string/dd"
+        android:maxLength="2"
+        android:numeric="integer"
+        android:textColorHint="@color/highgrey" />
+
+    <ImageView
+        android:id="@+id/left"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:src="@mipmap/nextpageleft" />
+
+    <ImageView
+        android:id="@+id/right"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:src="@mipmap/nextpageright" />
+</RelativeLayout>

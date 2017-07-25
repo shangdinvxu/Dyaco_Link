@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/goal_view"
+    android:orientation="vertical"
+    android:background="@color/yellow_title"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <com.linkloving.dyh08.logic.UI.distance.WheelView.GoalWheelView
+            android:id="@+id/goal_wheelView"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+        </com.linkloving.dyh08.logic.UI.distance.WheelView.GoalWheelView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/cancelBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/general_cancel"
+                    android:textColor="@color/chat_view_orange"
+                    android:background="@null"
+                    android:layout_centerHorizontal="true"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/okBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/general_ok"
+                    android:textColor="@color/chat_view_orange"
+                    android:background="@null"
+                    android:layout_centerHorizontal="true"/>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+
+</LinearLayout>

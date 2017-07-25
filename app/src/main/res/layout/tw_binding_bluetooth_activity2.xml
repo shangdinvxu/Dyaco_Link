@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:src="@mipmap/bluetooth" />
+
+            <ImageView
+                android:id="@+id/blue_middle_changeIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/link" />
+
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/wristband" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@color/gray"
+        >
+
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="300dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text="@string/Thisaction"
+            />
+        <Button
+            android:id="@+id/cancel"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:text="@string/Cancel"
+            android:textAllCaps="false"
+            android:background="@color/button_gray"
+            />
+        <Button
+            android:id="@+id/confirm"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:textAllCaps="false"
+            android:text="@string/Confirm"
+            android:layout_marginBottom="20dp"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:background="@color/button_gray"
+            />
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

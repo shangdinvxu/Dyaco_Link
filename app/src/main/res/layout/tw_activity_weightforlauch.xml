@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.linkloving.dyh08.logic.UI.login.WeightNewActivity">
+
+    <RelativeLayout
+        android:background="@color/yellow_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/et_userWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:text="60"
+            android:textSize="@dimen/m00_font_size_88pt"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/et_userWeight"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10px"
+            android:layout_marginBottom="10px"
+            android:textColor="@color/white"
+            android:text="@string/unit_kilogramme"
+            android:textSize="@dimen/m00_font_size_28pt"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above ="@+id/et_userWeight"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10px"
+            android:text="@string/Weight"
+            android:textColor="@color/white"
+            android:textSize="@dimen/m00_font_size_28pt"/>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <com.linkloving.dyh08.logic.UI.launch.view.ScaleRulerView
+            android:id="@+id/scaleWheelView_weight"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:background="@android:color/white" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/yellow_title">
+
+
+            <ImageView
+                android:id="@+id/left"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/nextpageleft"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                />
+            <ImageView
+                android:id="@+id/right"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/nextpageright"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

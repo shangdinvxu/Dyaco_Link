@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:gravity="center_horizontal"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:lines="2"
+        android:text="@string/OpenThe"
+        android:textSize="30dp"
+        android:textColor="@color/blue"
+        />
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:src="@mipmap/bluetooth"
+            />
+        <ImageView
+            android:id="@+id/blue_middle_changeIV"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/link"
+            android:layout_gravity="center_vertical"
+            />
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:src="@mipmap/wristband"
+            />
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/LinkEquip"
+        android:textSize="28sp"
+        android:textColor="@color/blue_text"
+        />
+    <ListView
+        android:id="@+id/bluetooth_list"
+        android:layout_marginTop="20dp"
+        android:layout_width="260dp"
+        android:dividerHeight="0dp"
+        android:layout_height="150dp"></ListView>
+
+    <ImageView
+        android:clickable="true"
+        android:id="@+id/bluetooth_next"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@mipmap/right"
+
+        android:layout_marginLeft="140dp"
+        />
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
