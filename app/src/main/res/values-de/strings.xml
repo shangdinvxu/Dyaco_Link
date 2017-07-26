@@ -1197,5 +1197,6 @@
     <string name="hint">Prompt</string>
     <string name="please_stay_in">please stay in this page until update completed</string>
     <string name="sporttime">Bewegungszeit</string>
+    <string name="timecannot">Die Zeit kann nicht bis 00:00 Uhr eingestellt werden</string>
 
 </resources>

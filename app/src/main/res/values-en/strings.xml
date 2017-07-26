@@ -1174,4 +1174,5 @@
     <string name="firmware_updating">firmware updating</string>
     <string name="please_stay_in">Please stay in this page until update complete</string>
     <string name="sporttime">Elapsed Time</string>
+    <string name="timecannot">Time can not be set to 00：00</string>
 </resources>

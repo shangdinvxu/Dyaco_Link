@@ -30,4 +30,5 @@ dependencies {
     compile 'com.android.support:design:23.4.0'
 
     compile files('libs/MobCommons-2016.1102.1128.jar')
+
 }

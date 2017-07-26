@@ -1201,4 +1201,5 @@
     <string name="firmware_updating">固件更新中</string>
     <string name="please_stay_in">韧体更新中，请勿操作。</string>
     <string name="sporttime">运动时间</string>
+    <string name="timecannot">时间不可以设置成00：00</string>
 </resources>

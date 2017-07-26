@@ -1196,4 +1196,5 @@
     <string name="firmware_updating">韌體更新中</string>
     <string name="please_stay_in">韌體更新中，請勿操作.</string>
     <string name="sporttime">運動時間</string>
+    <string name="timecannot">時間不可以設置成00：00</string>
 </resources>

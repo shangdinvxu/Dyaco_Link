@@ -258,6 +258,8 @@ public class NotificationSettingActivity extends ToolBarActivity {
                     MyLog.e(TAG, "clockone" + timeSetting1.getText().toString());
                     if (timeSetting1.getText().toString().equals("00:00")) {
                         //都为0就不发送命令
+                        Toast.makeText(NotificationSettingActivity.this,getString(R.string.timecannot),Toast.LENGTH_SHORT).show();
+                        switch1.setChecked(false);
                     } else {
                         if (provider.isConnectedAndDiscovered()) {
                             MyLog.e(TAG, "发送定时器的指令了");
@@ -681,7 +683,7 @@ public class NotificationSettingActivity extends ToolBarActivity {
                                 + "00" + "-" + "00" + ":" + "00";
                         deviceSetting.setLongsit_time(time);
                         deviceSetting.setLongsit_step(longsit_step);
-                        deviceSetting.setLongsit_intervals(Integer.parseInt(longsit_vaild));
+                        deviceSetting.setLongsit_intervals(Intervalstime);
                         starttimeView.setText(starttimeHr+":"+starttimeMin);
                         LocalUserSettingsToolkits.updateLocalSetting(NotificationSettingActivity.this,
                                 deviceSetting);
@@ -691,7 +693,7 @@ public class NotificationSettingActivity extends ToolBarActivity {
                                 + "00" + "-" + "00" + ":" + "00";
                         deviceSetting.setLongsit_time(time1);
                         deviceSetting.setLongsit_step(longsit_step);
-                        deviceSetting.setLongsit_intervals(Integer.parseInt(longsit_vaild));
+                        deviceSetting.setLongsit_intervals(Intervalstime);
                         endtimeTextview.setText(endTimeHr+":"+endTimeMin);
                         LocalUserSettingsToolkits.updateLocalSetting(NotificationSettingActivity.this,
                                 deviceSetting);

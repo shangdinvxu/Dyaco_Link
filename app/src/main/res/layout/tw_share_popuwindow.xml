@@ -36,6 +36,7 @@
                 android:layout_marginLeft="10dp"
                 android:src="@mipmap/linkin" />
 
+
             <ImageView
                 android:id="@+id/fb"
                 android:layout_width="30dp"
@@ -49,6 +50,12 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="10dp"
                 android:src="@mipmap/instagram" />
+            <ImageView
+                android:id="@+id/twitter"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/twitter" />
 
 
         </LinearLayout>

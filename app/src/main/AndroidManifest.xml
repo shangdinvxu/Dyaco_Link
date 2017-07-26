@@ -540,6 +540,9 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
+        <meta-data android:name="Mob-AppKey" android:value="1e6a41eb3ecc8"/>
+        <meta-data android:name="Mob-AppSecret" android:value="9a9858652e3620e1ef0e96f00d75e915"/>
+
         <activity
             android:name=".logic.UI.Groups.baidu.GroupsShareActivity"
             android:screenOrientation="portrait"

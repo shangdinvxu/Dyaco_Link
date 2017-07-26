@@ -98,7 +98,7 @@ public class SocialActivity extends ToolBarActivity {
     private View view;
     private String filePathCache = "/sdcard/ranking_v444.png";
     private ImageView fb,wx,qq,linkin,instagram;
-    private ImageView twitter;
+
     private TraceGreendao traGreendao;
     private static List<LatLng> pointList = new ArrayList<LatLng>();
     private SQLiteDatabase db;
@@ -119,6 +119,7 @@ public class SocialActivity extends ToolBarActivity {
     private String filePathCacheTotal = "/sdcard/ranking_v333.png";
     private List<Note> startNoteList;
     private List<Note> endNoteList;
+    private ImageView twitter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,6 +146,7 @@ public class SocialActivity extends ToolBarActivity {
         qq = (ImageView) popupView.findViewById(R.id.qq);
         linkin = (ImageView) popupView.findViewById(R.id.Linkin);
         instagram = (ImageView) popupView.findViewById(R.id.instagram);
+        twitter = (ImageView) popupView.findViewById(R.id.twitter);
         popupWindow.setBackgroundDrawable(new ColorDrawable(0xffffffff));
         sharebutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -199,6 +201,12 @@ public class SocialActivity extends ToolBarActivity {
             @Override
             public void onClick(View v) {
                 showShare(SocialActivity.this,"Instagram",false);
+            }
+        });
+        twitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showShare(SocialActivity.this,"Twitter",false);
             }
         });
 
