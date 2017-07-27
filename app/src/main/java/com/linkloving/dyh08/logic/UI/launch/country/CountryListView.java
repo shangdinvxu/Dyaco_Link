@@ -20,9 +20,11 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import static com.mob.tools.utils.ResHelper.getBitmapRes;
+import static com.mob.tools.utils.ResHelper.getColorRes;
 
-import static com.mob.tools.utils.R.getBitmapRes;
-import static com.mob.tools.utils.R.getColorRes;
+
+//import static com.mob.tools.utils.R.getBitmapRes;、
 
 /** 自定义国家列表控件listview */
 public class CountryListView extends RelativeLayout implements OnTouchListener {

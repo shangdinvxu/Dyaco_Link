@@ -191,7 +191,7 @@ public class GroupsShareActivity extends ToolBarActivity implements OnMapReadyCa
         ButterKnife.inject(this);
         view = LayoutInflater.from(GroupsShareActivity.this).inflate(R.layout.tw_share_day, null);
         locationsp = getSharedPreferences("Location", MODE_PRIVATE);
-        ShareSDK.initSDK(GroupsShareActivity.this);
+//        ShareSDK.initSDK(GroupsShareActivity.this);
         user_id = MyApplication.getInstance(GroupsShareActivity.this).getLocalUserInfoProvider().getUser_id();
         user_weight = MyApplication.getInstance(GroupsShareActivity.this).getLocalUserInfoProvider().getUserBase().getUser_weight();
 
@@ -757,7 +757,7 @@ public class GroupsShareActivity extends ToolBarActivity implements OnMapReadyCa
         //ShareSDK快捷分享提供两个界面第一个是九宫格 CLASSIC  第二个是SKYBLUE
         oks.setTheme(OnekeyShareTheme.CLASSIC);
         // 令编辑页面显示为Dialog模式
-        oks.setDialogMode();
+//        oks.setDialogMode();
         // 在自动授权时可以禁用SSO方式
         oks.disableSSOWhenAuthorize();
         //oks.setAddress("12345678901"); //分享短信的号码和邮件的地址
@@ -950,7 +950,6 @@ public class GroupsShareActivity extends ToolBarActivity implements OnMapReadyCa
 
 
     private void showShare() {
-        ShareSDK.initSDK(this);
         OnekeyShare oks = new OnekeyShare();
 //关闭sso授权
         oks.disableSSOWhenAuthorize();

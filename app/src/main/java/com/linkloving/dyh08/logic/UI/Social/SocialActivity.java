@@ -44,6 +44,7 @@ import com.linkloving.dyh08.utils.logUtils.MyLog;
 import com.linkloving.dyh08.utils.manager.AsyncTaskManger;
 import com.linkloving.dyh08.utils.sportUtils.SportDataHelper;
 import com.linkloving.utils.TimeZoneHelper;
+import com.mob.commons.SHARESDK;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -127,7 +128,8 @@ public class SocialActivity extends ToolBarActivity {
         setContentView(R.layout.tw_share_day);
         view = LayoutInflater.from(SocialActivity.this).inflate(R.layout.tw_share_day, null);
         ButterKnife.inject(this);
-        ShareSDK.initSDK(SocialActivity.this);
+
+//        ShareSDK.initSDK(SocialActivity.this);
         userEntity = MyApplication.getInstance(SocialActivity.this).getLocalUserInfoProvider();
         user_id = userEntity.getUser_id();
         initPopupWindow();
@@ -228,7 +230,7 @@ public class SocialActivity extends ToolBarActivity {
         //ShareSDK快捷分享提供两个界面第一个是九宫格 CLASSIC  第二个是SKYBLUE
         oks.setTheme(OnekeyShareTheme.CLASSIC);
         // 令编辑页面显示为Dialog模式
-        oks.setDialogMode();
+//        oks.setDialogMode();
         // 在自动授权时可以禁用SSO方式
         oks.disableSSOWhenAuthorize();
         //oks.setAddress("12345678901"); //分享短信的号码和邮件的地址

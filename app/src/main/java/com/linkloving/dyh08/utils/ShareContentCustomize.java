@@ -21,8 +21,8 @@ public class ShareContentCustomize implements ShareContentCustomizeCallback {
         // 改写twitter分享内容中的text字段，否则会超长，
         // 因为twitter会将图片地址当作文本的一部分去计算长度
         if ("Twitter".equals(platform.getName())) {
-            String text = platform.getContext().getString(R.string.share_content_short);
-            paramsToShare.setText(text);
+//            String text = platform..getString(R.string.share_content_short);
+//            paramsToShare.setText(text);
         }
     }
 

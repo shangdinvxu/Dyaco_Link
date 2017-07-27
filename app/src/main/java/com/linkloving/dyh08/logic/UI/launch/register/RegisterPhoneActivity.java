@@ -49,7 +49,9 @@ import cn.smssdk.OnSendMessageHandler;
 import cn.smssdk.SMSSDK;
 import cn.smssdk.utils.SMSLog;
 
-import static com.mob.tools.utils.R.getStringRes;
+import static com.mob.tools.utils.ResHelper.getStringRes;
+
+//import static com.mob.tools.utils.R.getStringRes;
 
 public class RegisterPhoneActivity extends Activity implements View.OnClickListener {
     private static final String TAG = RegisterPhoneActivity.class.getSimpleName();

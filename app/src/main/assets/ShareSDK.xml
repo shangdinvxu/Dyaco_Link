@@ -2,13 +2,8 @@
 <DevInfor>
     <!--
     	说明：
-    	
-    	1、表格中的第一项
-    		<ShareSDK 
-        		AppKey="api20" />
-    	是必须的，其中的AppKey是您在ShareSDK上注册的开发者帐号的AppKey
-    	
-    	2、所有集成到您项目的平台都应该为其在表格中填写相对应的开发者信息，以新浪微博为例：
+
+    	所有集成到您项目的平台都应该为其在表格中填写相对应的开发者信息，以新浪微博为例：
     	    <SinaWeibo
                 Id="1"
                 SortId="1"
@@ -46,17 +41,17 @@
 			VKontakte      http://vk.com/dev
 			易信好友        http://open.yixin.im/
 			明道	           http://open.mingdao.com/
-			Line           http://media.line.me/zh-hant/
+			Line           http://media.line.me/zh-hant/  https://developers.line.me
 			Pocket         http://getpocket.com/developer/apps/new
 			KakaoTalk      https://developers.kakao.com/
 			KakaoStory     https://developers.kakao.com/
 			Plurk          http://www.plurk.com/API
     -->
-    
-    <ShareSDK 
-        AppKey = "1e6a41eb3ecc8"/> <!-- 修改成你在sharesdk后台注册的应用的appkey"-->
-    
-    <!-- ShareByAppClient标识是否使用微博客户端分享，默认是false -->
+
+    <!-- ShareByAppClient标识是否使用微博客户端分享，默认是false, -->
+	<!-- 1、isNewApi是否使用新街口，true是使用新接口，false为老接口
+		 2、用户分享到微博的文本内容，必须做URLencode，内容不超过140个汉字，文本中不能包含“#话题词#”，同时文本中必须包含至少一个第三方分享到微博的网页URL，
+		且该URL只能是该第三方（调用方）绑定域下的URL链接，绑定域在“我的应用 － 应用信息 － 基本应用信息编辑 － 安全域名”里设置。-->
     <SinaWeibo
         Id="1"
         SortId="1"
@@ -64,6 +59,7 @@
         AppSecret="38a4f8204cc784f81f9f0daaf31e02e3"
         RedirectUrl="http://www.sharesdk.cn"
         ShareByAppClient="true"
+		IsNewApi = "true"
         Enable="true" />
 
     <TencentWeibo
@@ -91,30 +87,33 @@
 		
 		BypassApproval是绕过审核的标记，设置为true后AppId将被忽略，故不经过
 		审核的应用也可以执行分享，但是仅限于分享文字和图片，不能分享其他类型，
-		默认值为false。此外，微信收藏不支持此字段。
+		默认值为false。此外，微信收藏不支持此字段。wx4868b35061f87885
 	-->
-	<Wechat
-		Id="4"
-		SortId="4"
-		AppId="wxf3a623155e2ebc55"
-		AppSecret="b48f8c334918c485251d8581695f32eb"
-		BypassApproval="false"
-		Enable="true" />
-
-	<WechatMoments
-		Id="5"
-		SortId="5"
-		AppId="wxcd89a759f1a9d81f"
-		AppSecret="faf2fa9bb13a6ba84a542876edde03db"
-		BypassApproval="false"
-		Enable="true" />
-	<WechatMoments
-		Id="5"
-		SortId="5"
-		AppId="wxcd89a759f1a9d81f"
-		AppSecret="faf2fa9bb13a6ba84a542876edde03db"
-		BypassApproval="false"
-		Enable="true" />
+	<!--要分享微信小应用程序时用userName,path-->
+    <Wechat
+        Id="4"
+        SortId="4"
+        AppId="wx4868b35061f87885"
+        AppSecret="64020361b8ec4c99936c0e3999a9f249"
+		userName="gh_afb25ac019c9"
+		path="/page/API/pages/share/share"
+        BypassApproval="false"
+        Enable="true" />
+    
+    <WechatMoments
+        Id="5"
+        SortId="5"
+        AppId="wx4868b35061f87885"
+        AppSecret="64020361b8ec4c99936c0e3999a9f249"
+        BypassApproval="false"
+        Enable="true" />
+        
+	<WechatFavorite
+        Id="6"
+        SortId="6"
+        AppId="wx4868b35061f87885"
+        AppSecret="64020361b8ec4c99936c0e3999a9f249"
+        Enable="true" />
     
 	<!-- ShareByAppClient标识是否使用微博客户端分享，默认是false -->
 	<QQ
@@ -124,13 +123,14 @@
         AppKey="aed9b0303e3ed1e27bae87c33761161d"
         ShareByAppClient="true"
         Enable="true" />
-
-	<Facebook
-		Id="8"
-		SortId="8"
-		ConsumerKey="1557725444520136"
-		ConsumerSecret="219ddb22757000023d6003c7c6cb7c03"
-		RedirectUrl="http://mob.com"
+    
+    <Facebook
+        Id="8"
+        SortId="8"
+        ConsumerKey="1782052548490535"
+        ConsumerSecret="6b31d9e589e9fd59eae6e243d97f3d8b"
+        RedirectUrl="http://mob.com"
+		ShareByAppClient="true"
 		Enable="true" />
 
     <Twitter
@@ -209,14 +209,15 @@
         ApiKey="ejo5ibkye3vo"
         SecretKey="cC7B2jpxITqPLZ5M" 
         RedirectUrl="http://sharesdk.cn"
+		ShareByAppClient="true"
         Enable="true" />
     
      <GooglePlus
     	Id="21"
         SortId="21"
-        ClientID="682795613743-cfo3a8r4va0ujja7qofr54hobt2kv3cq.apps.googleusercontent.com"
+        ClientID="236300675100-am5pm8km7md1memjevq8rl9pg5c4s4b8.apps.googleusercontent.com"
         RedirectUrl="http://localhost"
-        ShareByAppClient = "false"
+        ShareByAppClient = "true"
         Enable="true" />
      
      <FourSquare
@@ -308,6 +309,8 @@
 	<Line
 	    Id="32"
         SortId="32"
+        ChannelID = "1477692153"
+        ChannelSecret ="f30c036370f2e04ade71c52eef73a9af"
         Enable="true" />
 	
 	<KakaoTalk
@@ -362,5 +365,29 @@
         SortId="51"  
         AppId="2015072400185895"
         Enable="true"/>
+     
+     <Dingding
+        Id="52"
+        SortId="52"
+        AppId="dingoanxyrpiscaovl4qlw"
+        BypassApproval="false"
+        Enable="true"/>
 
+    <Youtube
+        Id="53"
+        SortId="53"
+        ClientID="370141748022-bicrnsjfiije93bvdt63dh3728m4shas.apps.googleusercontent.com"
+        AppSecret="AIzaSyAO06g-0TDpHcsXXO918a7QE3Zdct2bB5E"
+        RedirectUrl="http://localhost"
+        ShareByAppClient = "true"
+        Enable="true" />
+	
+	<Meipai
+		Id="54"
+		SortId="54"
+		ClientID="1089867596"
+		AppSecret="y9ym6rrjjijtkt23qtsc"
+		ShareByAppClient = "true"
+		Enable="true"/>
+	
 </DevInfor>

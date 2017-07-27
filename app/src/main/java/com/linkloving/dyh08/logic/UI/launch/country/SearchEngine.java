@@ -14,7 +14,9 @@ import java.util.zip.GZIPInputStream;
 
 import cn.smssdk.utils.SMSLog;
 
-import static com.mob.tools.utils.R.getRawRes;
+import static com.mob.tools.utils.ResHelper.getRawRes;
+
+//import static com.mob.tools.utils.R.getRawRes;
 
 public class SearchEngine {
 	private static final String DB_FILE = "smssdk_pydb";

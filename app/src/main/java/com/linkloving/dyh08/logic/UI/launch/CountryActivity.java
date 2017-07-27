@@ -20,7 +20,9 @@ import java.util.HashMap;
 
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
-import static com.mob.tools.utils.R.getStringRes;
+//import static com.mob.tools.utils.R.getStringRes;
+import static com.mob.tools.utils.ResHelper.getStringRes;
+
 public class CountryActivity extends ToolBarActivity implements GroupListView.OnItemClickListener {
 public final static String TAG = CountryActivity.class.getSimpleName();
 private String id;

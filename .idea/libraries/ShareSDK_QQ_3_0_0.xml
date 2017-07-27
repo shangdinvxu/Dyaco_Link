@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="ShareSDK-QQ-2.7.10">
+  <library name="ShareSDK-QQ-3.0.0">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/libs/ShareSDK-QQ-2.7.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/onkeyshare/libs/ShareSDK-QQ-3.0.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

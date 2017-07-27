@@ -22,7 +22,9 @@ import cn.smssdk.SMSSDK;
 
 import cn.smssdk.utils.SMSLog;
 
-import static com.mob.tools.utils.R.getColorRes;
+import static com.mob.tools.utils.ResHelper.getColorRes;
+
+//import static com.mob.tools.utils.R.getColorRes;
 
 /** 自定义的国家列表，适配器，用于填充国家listview*/
 public class CountryAdapter extends GroupListView.GroupAdapter {

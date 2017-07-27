@@ -31,7 +31,7 @@ public class SizeHelper {
 	 * @return 像素大小
 	 */
 	public static int fromPx(int px) {
-		return com.mob.tools.utils.R.designToDevice(context, designedDensity, px);
+		return 1;
 	}
 
 	/**
@@ -39,7 +39,7 @@ public class SizeHelper {
 	* @return 像素大小
 	*/
 	public static int fromPxWidth(int px) {
-		return com.mob.tools.utils.R.designToDevice(context, designedScreenWidth, px);
+		return 1;
 	}
 
 	/**
@@ -47,8 +47,7 @@ public class SizeHelper {
 	* @return 像素大小
 	*/
 	public static int fromDp(int dp) {
-		int px = com.mob.tools.utils.R.dipToPx(context, dp);
-		return com.mob.tools.utils.R.designToDevice(context, designedDensity, px);
+		return 1;
 	}
 
 }

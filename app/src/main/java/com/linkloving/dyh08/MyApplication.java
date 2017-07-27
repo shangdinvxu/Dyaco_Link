@@ -22,6 +22,7 @@ import com.linkloving.dyh08.logic.dto.UserEntity;
 import com.linkloving.dyh08.prefrences.PreferencesToolkits;
 import com.linkloving.dyh08.utils.logUtils.MyLog;
 import com.linkloving.dyh08.utils.manager.OsUtils;
+import com.mob.MobApplication;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.yolanda.nohttp.NoHttp;
 
@@ -34,7 +35,7 @@ import cn.sharesdk.framework.ShareSDK;
 /**
  * Created by zkx on 2016/3/2.
  */
-public class MyApplication extends MultiDexApplication {
+public class MyApplication extends MobApplication {
     private final static String TAG = MyApplication.class.getSimpleName();
 
     public final static String SERVICE_WATCH = "com.linkloving.dyh08";

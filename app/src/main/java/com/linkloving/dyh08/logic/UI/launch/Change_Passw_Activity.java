@@ -47,7 +47,9 @@ import cn.smssdk.OnSendMessageHandler;
 import cn.smssdk.SMSSDK;
 import cn.smssdk.utils.SMSLog;
 
-import static com.mob.tools.utils.R.getStringRes;
+import static com.mob.tools.utils.ResHelper.getStringRes;
+
+//import static com.mob.tools.utils.R.getStringRes;
 
 public class Change_Passw_Activity extends Activity implements View.OnClickListener, View.OnTouchListener {
 
