@@ -39,6 +39,8 @@ public abstract class BLEHandler extends Handler {
 
 		public void updateFor_handleScanTimeOutMsg();
 
+		public void updateFor_settingTime();
+
 		public void updateFor_handleSendDataError();
 
 		public void updateFor_handleNotSupportMsg();
@@ -226,6 +228,11 @@ public abstract class BLEHandler extends Handler {
 
 		@Override
 		public void updateFor_FlashHeadSucess() {
+		}
+
+
+		public void  updateFor_settingTime(){
+
 		}
 
 		// TODO 运动数据中有异常数据！！！！！！！！！！！！！！！！！！！！
@@ -979,7 +986,8 @@ public abstract class BLEHandler extends Handler {
 	}
 
 	protected  void notifyforSettingTime(){
-
+		if (bleProviderObserver != null)
+			bleProviderObserver.updateFor_settingTime();
 	}
 
 	private void handleHaveNotConnectMsg() {

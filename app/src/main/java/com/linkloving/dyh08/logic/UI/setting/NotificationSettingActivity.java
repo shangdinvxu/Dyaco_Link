@@ -1,5 +1,6 @@
 package com.linkloving.dyh08.logic.UI.setting;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
@@ -28,6 +29,7 @@ import com.linkloving.dyh08.R;
 import com.linkloving.dyh08.ViewUtils.Wheelview.WheelView;
 import com.linkloving.dyh08.basic.toolbar.ToolBarActivity;
 import com.linkloving.dyh08.logic.UI.OAD.NotificationActivity;
+import com.linkloving.dyh08.logic.UI.main.PortalActivity;
 import com.linkloving.dyh08.logic.dto.UserEntity;
 import com.linkloving.dyh08.notify.NotificationService;
 import com.linkloving.dyh08.prefrences.LocalUserSettingsToolkits;
@@ -132,20 +134,8 @@ public class NotificationSettingActivity extends ToolBarActivity {
         SharedPreferences clock = getSharedPreferences("clock", MODE_PRIVATE);
         edit = clock.edit();
         provider = BleService.getInstance(NotificationSettingActivity.this).getCurrentHandlerProvider();
-        provider.setProviderHandler(new BLEHandler(NotificationSettingActivity.this) {
-            @Override
-            protected BLEProvider getProvider() {
-                return provider;
-            }
-
-            @Override
-            protected void notifyforSettingTime() {
-                super.notifyforSettingTime();
-                if (ok_imageview!=null){
-                    ok_imageview.setVisibility(View.VISIBLE);
-                }
-            }
-        });
+        BLEProviderObserverAdapterImpl bleProviderObserver = new BLEProviderObserverAdapterImpl();
+        provider.setBleProviderObserver(bleProviderObserver);
         hrStrings = new ArrayList<>();
         for (int i = 0; i <= 23; i++) {
             String s;
@@ -978,4 +968,19 @@ public class NotificationSettingActivity extends ToolBarActivity {
 
     }
 
+    private class BLEProviderObserverAdapterImpl extends BLEHandler.BLEProviderObserverAdapter {
+
+        @Override
+        protected Activity getActivity() {
+            return NotificationSettingActivity.this;
+        }
+
+        @Override
+        public void  updateFor_settingTime() {
+            if (ok_imageview != null) {
+                ok_imageview.setVisibility(View.VISIBLE);
+            }
+        }
+
+    }
 }
