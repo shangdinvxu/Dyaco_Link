@@ -1198,5 +1198,7 @@
     <string name="please_stay_in">please stay in this page until update completed</string>
     <string name="sporttime">Bewegungszeit</string>
     <string name="timecannot">Die Zeit kann nicht bis 00:00 Uhr eingestellt werden</string>
+    <string name="boundSuccess">Successfully Bound</string>
+    <string name="version">Version</string>
 
 </resources>

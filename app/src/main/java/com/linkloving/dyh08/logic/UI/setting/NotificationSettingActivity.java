@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.service.notification.NotificationListenerService;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -122,6 +123,7 @@ public class NotificationSettingActivity extends ToolBarActivity {
     private TextView endtimeTextview;
     private TextView intervalTextview;
     private ImageView ok_imageview;
+    private boolean isClose = true ;
 
 
     @Override
@@ -244,6 +246,7 @@ public class NotificationSettingActivity extends ToolBarActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 ok_imageview.setVisibility(View.GONE);
+                isClose = isChecked ;
                 if (isChecked) {
                     MyLog.e(TAG, "clockone" + timeSetting1.getText().toString());
                     if (timeSetting1.getText().toString().equals("00:00")) {
@@ -977,8 +980,10 @@ public class NotificationSettingActivity extends ToolBarActivity {
 
         @Override
         public void  updateFor_settingTime() {
-            if (ok_imageview != null) {
-                ok_imageview.setVisibility(View.VISIBLE);
+            if(isClose) {
+                if (ok_imageview != null) {
+                    ok_imageview.setVisibility(View.VISIBLE);
+                }
             }
         }
 

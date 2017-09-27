@@ -1202,4 +1202,6 @@
     <string name="please_stay_in">韧体更新中，请勿操作。</string>
     <string name="sporttime">运动时间</string>
     <string name="timecannot">时间不可以设置成00：00</string>
+    <string name="boundSuccess">绑定成功</string>
+    <string name="version">版本</string>
 </resources>

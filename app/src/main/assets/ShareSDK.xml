@@ -93,26 +93,26 @@
     <Wechat
         Id="4"
         SortId="4"
-        AppId="wx4868b35061f87885"
-        AppSecret="64020361b8ec4c99936c0e3999a9f249"
+        AppId="wx00404c934bef2d93"
+        AppSecret="ac23e9cfa28d038b014afce963e1e77d"
 		userName="gh_afb25ac019c9"
 		path="/page/API/pages/share/share"
-        BypassApproval="false"
+        BypassApproval="true"
         Enable="true" />
     
     <WechatMoments
         Id="5"
         SortId="5"
-        AppId="wx4868b35061f87885"
-        AppSecret="64020361b8ec4c99936c0e3999a9f249"
-        BypassApproval="false"
+        AppId="wx00404c934bef2d93"
+        AppSecret="ac23e9cfa28d038b014afce963e1e77d"
+        BypassApproval="true"
         Enable="true" />
         
 	<WechatFavorite
         Id="6"
         SortId="6"
-        AppId="wx4868b35061f87885"
-        AppSecret="64020361b8ec4c99936c0e3999a9f249"
+        AppId="wx00404c934bef2d93"
+        AppSecret="ac23e9cfa28d038b014afce963e1e77d"
         Enable="true" />
     
 	<!-- ShareByAppClient标识是否使用微博客户端分享，默认是false -->
@@ -127,8 +127,8 @@
     <Facebook
         Id="8"
         SortId="8"
-        ConsumerKey="1782052548490535"
-        ConsumerSecret="6b31d9e589e9fd59eae6e243d97f3d8b"
+        ConsumerKey="1756259274634671"
+        ConsumerSecret="e5748d064def975db507b61917d326af"
         RedirectUrl="http://mob.com"
 		ShareByAppClient="true"
 		Enable="true" />

@@ -16,6 +16,8 @@ import com.example.android.bluetoothlegatt.utils.OwnLog;
 import com.example.android.bluetoothlegatt.utils.TimeZoneHelper;
 import com.example.android.bluetoothlegatt.wapper.BLEWapper;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
@@ -375,17 +377,18 @@ public class LepaoProtocalImpl implements LepaoProtocol {
 	}
 
 
-
-
 	public List<LpHeartrateData> getHeartrate()throws BLException, LPException {
 		List<LpHeartrateData> list = new ArrayList<>();
 		WatchResponse resp = getHeartrate(0xff, 0x7f);
 		if (resp.getData()[4]==0){
 			int itemLeft = LPUtil.makeShort(resp.getData()[6], resp.getData()[5]);
+			int total = itemLeft ;
+			EventBus aDefault = EventBus.getDefault();
 			list.addAll(resp.toLPHeartrateDataList(resp));
 			while (itemLeft>10) {
 				WatchResponse heartrate = getHeartrate(itemLeft - 10, 0);
 				itemLeft =LPUtil.makeShort(heartrate.getData()[6], heartrate.getData()[5]);
+				aDefault.post(new GetHeartEvent(total,itemLeft));
 				list.addAll(heartrate.toLPHeartrateDataList(heartrate));
 				Log.e(TAG,list.size()+"list的长度是");
 			}

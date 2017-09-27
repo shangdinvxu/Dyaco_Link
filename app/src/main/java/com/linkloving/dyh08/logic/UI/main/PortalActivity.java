@@ -48,6 +48,7 @@ import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.example.android.bluetoothlegatt.BLEHandler;
 import com.example.android.bluetoothlegatt.BLEProvider;
+import com.example.android.bluetoothlegatt.proltrol.GetHeartEvent;
 import com.example.android.bluetoothlegatt.proltrol.dto.LPDeviceInfo;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
@@ -77,7 +78,6 @@ import com.linkloving.dyh08.logic.UI.main.materialmenu.Left_viewVO1;
 import com.linkloving.dyh08.logic.UI.main.materialmenu.MenuNewAdapter;
 import com.linkloving.dyh08.logic.UI.main.materialmenu.MenuVO;
 import com.linkloving.dyh08.logic.UI.more.MoreActivity;
-import com.linkloving.dyh08.logic.UI.setting.GeneralActivity;
 import com.linkloving.dyh08.logic.dto.SportRecordUploadDTO;
 import com.linkloving.dyh08.logic.dto.UserEntity;
 import com.linkloving.dyh08.prefrences.PreferencesToolkits;
@@ -86,7 +86,6 @@ import com.linkloving.dyh08.utils.AvatarHelper;
 import com.linkloving.dyh08.utils.CommonUtils;
 import com.linkloving.dyh08.utils.DateSwitcher;
 import com.linkloving.dyh08.utils.IsBackgroundUtils;
-import com.linkloving.dyh08.utils.MyToast;
 import com.linkloving.dyh08.utils.ScreenUtils;
 import com.linkloving.dyh08.utils.ToolKits;
 import com.linkloving.dyh08.utils.TypefaceUtils;
@@ -372,6 +371,8 @@ public class PortalActivity extends AutoLayoutActivity implements View.OnClickLi
     @Subscribe (threadMode = ThreadMode.MAIN)
     public void onGetHeaert(GetHeartEvent event){
         if (pulltorefreshView!=null) {
+            int total = event.getTotal();
+            int left = event.getLeft();
             pulltorefreshView.getHeaderLayout().getmHeaderText().setText("获取心率中");
         }
 
@@ -596,7 +597,7 @@ public class PortalActivity extends AutoLayoutActivity implements View.OnClickLi
                     // 临时文件名
                     int user_id = MyApplication.getInstance(PortalActivity.this).getLocalUserInfoProvider().getUser_id();
                     String userIdString = Integer.toString(user_id);
-                    __tempImageFileLocation = avatarTempDir.getAbsolutePath() + "/" +"local_avatar_temp.jpg";
+                    __tempImageFileLocation = avatarTempDir.getAbsolutePath() + "/" +"local_avatar_temp_dy.jpg";
                 }
             }
         } catch (Exception e) {
@@ -1266,7 +1267,7 @@ public class PortalActivity extends AutoLayoutActivity implements View.OnClickLi
             if (needTocheck){
                 userEntity.getDeviceEntity().setModel_name(latestDeviceInfo.modelName);
                 needTocheck = false ;
-                downloadZip();
+//                downloadZip();
             }
 
         }

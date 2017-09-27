@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.example.android.bluetoothlegatt.BLEHandler;
 import com.example.android.bluetoothlegatt.BLEProvider;
 import com.linkloving.dyh08.BleService;
 import com.linkloving.dyh08.CommParams;
@@ -23,6 +24,7 @@ import com.linkloving.dyh08.http.basic.CallServer;
 import com.linkloving.dyh08.http.basic.HttpCallback;
 import com.linkloving.dyh08.http.basic.NoHttpRuquestFactory;
 import com.linkloving.dyh08.http.data.DataFromServer;
+import com.linkloving.dyh08.logic.UI.setting.NotificationSettingActivity;
 import com.linkloving.dyh08.logic.dto.UserEntity;
 import com.linkloving.dyh08.notify.NotificationService;
 import com.linkloving.dyh08.prefrences.PreferencesToolkits;
@@ -58,6 +60,8 @@ public class BluetoothDisconnectActivity extends ToolBarActivity {
         ButterKnife.inject(this);
         userEntity = MyApplication.getInstance(BluetoothDisconnectActivity.this).getLocalUserInfoProvider();
         provider = BleService.getInstance(BluetoothDisconnectActivity.this).getCurrentHandlerProvider();
+        BLEProviderObserverAdapterImpl bleProviderObserver = new BLEProviderObserverAdapterImpl();
+        provider.setBleProviderObserver(bleProviderObserver);
         modelInfo = PreferencesToolkits.getInfoBymodelName(BluetoothDisconnectActivity.this, userEntity.getDeviceEntity().getModel_name());
     }
     @Override
@@ -83,34 +87,36 @@ public class BluetoothDisconnectActivity extends ToolBarActivity {
         String last_sync_device_id = userAuthedInfo.getDeviceEntity().getLast_sync_device_id();
         if (last_sync_device_id==null||last_sync_device_id.length()==0){
         }else{
-            provider.unBoundDevice(BluetoothDisconnectActivity.this);
-            UserEntity userEntity = MyApplication.getInstance(BluetoothDisconnectActivity.this).getLocalUserInfoProvider();
-            //设备号置空
-            userEntity.getDeviceEntity().setLast_sync_device_id(null);
-            //设备类型置空
-            userEntity.getDeviceEntity().setDevice_type(0);
-            //*******模拟断开   不管有没有连接 先执行这个再说
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            if(provider.isConnectedAndDiscovered()) {
+                provider.unBoundDevice(BluetoothDisconnectActivity.this);
+            }else {
+                UserEntity userEntity = MyApplication.getInstance(BluetoothDisconnectActivity.this).getLocalUserInfoProvider();
+                //设备号置空
+                userEntity.getDeviceEntity().setLast_sync_device_id(null);
+                //设备类型置空
+                userEntity.getDeviceEntity().setDevice_type(0);
+                //*******模拟断开   不管有没有连接 先执行这个再说
+//            try {
+//                Thread.sleep(1000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+                BleService.getInstance(BluetoothDisconnectActivity.this).releaseBLE();
+                provider.clearProess();
+                provider.setCurrentDeviceMac(null);
+                provider.setmBluetoothDevice(null);
+                provider.resetDefaultState();
+                ToolKits.showCommonTosat(BluetoothDisconnectActivity.this, false, ToolKits.getStringbyId(BluetoothDisconnectActivity.this, R.string.unbound_success), Toast.LENGTH_SHORT);
+                finish();
+                IntentFactory.startPortalActivityIntent(BluetoothDisconnectActivity.this);
             }
-            BleService.getInstance(BluetoothDisconnectActivity.this).releaseBLE();
-            provider.clearProess();
-            provider.setCurrentDeviceMac(null);
-            provider.setmBluetoothDevice(null);
-            provider.resetDefaultState();
-            ToolKits.showCommonTosat(BluetoothDisconnectActivity.this, false, ToolKits.getStringbyId(BluetoothDisconnectActivity.this, R.string.unbound_success), Toast.LENGTH_SHORT);
         }
-            finish();
-        IntentFactory.startPortalActivityIntent(BluetoothDisconnectActivity.this);
+
     }
     private HttpCallback<String> httpCallback = new HttpCallback<String>() {
         @Override
         public void onFailed(int what, String url, Object tag, CharSequence message, int responseCode, long networkMillis) {
-
         }
-
         @Override
         public void onSucceed(int what, Response<String> response) {
             DataFromServer dataFromServer = JSON.parseObject(response.get(), DataFromServer.class);
@@ -150,9 +156,40 @@ public class BluetoothDisconnectActivity extends ToolBarActivity {
                     }
                     break;
             }
+        }
+    };
 
+    private class BLEProviderObserverAdapterImpl extends BLEHandler.BLEProviderObserverAdapter {
+
+        @Override
+        protected Activity getActivity() {
+            return BluetoothDisconnectActivity.this;
         }
 
+        @Override
+        public void updateFor_notifyForDeviceUnboundSucess_D() {
+            super.updateFor_notifyForDeviceUnboundSucess_D();
+            MyLog.e(TAG,"解绑执行了");
+            UserEntity userEntity = MyApplication.getInstance(BluetoothDisconnectActivity.this).getLocalUserInfoProvider();
+            //设备号置空
+            userEntity.getDeviceEntity().setLast_sync_device_id(null);
+            //设备类型置空
+            userEntity.getDeviceEntity().setDevice_type(0);
+            //*******模拟断开   不管有没有连接 先执行这个再说
+//            try {
+//                Thread.sleep(1000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+            BleService.getInstance(BluetoothDisconnectActivity.this).releaseBLE();
+            provider.clearProess();
+            provider.setCurrentDeviceMac(null);
+            provider.setmBluetoothDevice(null);
+            provider.resetDefaultState();
+            ToolKits.showCommonTosat(BluetoothDisconnectActivity.this, false, ToolKits.getStringbyId(BluetoothDisconnectActivity.this, R.string.unbound_success), Toast.LENGTH_SHORT);
+            finish();
+            IntentFactory.startPortalActivityIntent(BluetoothDisconnectActivity.this);
+        }
+    }
 
-    };
-}
+    }

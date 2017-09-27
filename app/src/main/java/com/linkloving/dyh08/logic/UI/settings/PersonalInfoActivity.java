@@ -118,7 +118,6 @@ public class PersonalInfoActivity extends ToolBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tw_setting);
         layoutInflater = LayoutInflater.from(PersonalInfoActivity.this);
-
         totalView = layoutInflater.inflate(R.layout.tw_setting, null);
         ButterKnife.inject(this);
         userEntity = MyApplication.getInstance(PersonalInfoActivity.this).getLocalUserInfoProvider();
@@ -148,8 +147,13 @@ public class PersonalInfoActivity extends ToolBarActivity {
         } else {
             radioRemOff.setChecked(true);
         }
-        Bitmap bitmap = decodeUriAsBitmap(getTempImageFileUri());
-        userHead.setImageBitmap(bitmap);
+        if (getTempImageFileUri()!=null){
+            Bitmap bitmap = decodeUriAsBitmap(getTempImageFileUri());
+            if (bitmap==null){
+                bitmap = BitmapFactory.decodeResource(getResources(),R.mipmap.default_avatar_m);
+            }
+            userHead.setImageBitmap(bitmap);
+        }
     }
 
     @OnClick(R.id.radio_left)
@@ -300,7 +304,6 @@ public class PersonalInfoActivity extends ToolBarActivity {
                 popupWindow.dismiss();
             }
         });
-
     }
 
     //为弹出窗口实现监听类
@@ -362,7 +365,6 @@ public class PersonalInfoActivity extends ToolBarActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
             }
         });
         Bitmap bitmap = decodeUriAsBitmap(imagePhotoUri);
@@ -417,7 +419,7 @@ public class PersonalInfoActivity extends ToolBarActivity {
                     // 临时文件名
                     int user_id = MyApplication.getInstance(PersonalInfoActivity.this).getLocalUserInfoProvider().getUser_id();
                     String userIdString = Integer.toString(user_id);
-                    __tempImageFileLocation = avatarTempDir.getAbsolutePath() + "/" + "local_avatar_temp.jpg";
+                    __tempImageFileLocation = avatarTempDir.getAbsolutePath() + "/" + "local_avatar_temp_dy.jpg";
                 }
             }
         } catch (Exception e) {

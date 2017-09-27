@@ -522,7 +522,7 @@ public class BluetoothActivity extends ToolBarActivity {
             Log.e("BluetoothActivity", "updateFor_boundInfoSyncToServerFinish");
             if (resultFromServer != null) {
                 if (((String) resultFromServer).equals("1")) {
-                    Toast.makeText(BluetoothActivity.this, "绑定成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BluetoothActivity.this, R.string.boundSuccess, Toast.LENGTH_SHORT).show();
                     provider.getModelName(BluetoothActivity.this);
                     MyLog.e(TAG,provider.getCurrentDeviceMac()+"provider.getCurrentDeviceMac()");
                     MyApplication.getInstance(BluetoothActivity.this).getLocalUserInfoProvider().getDeviceEntity().setLast_sync_device_id(provider.getCurrentDeviceMac());

@@ -5,6 +5,8 @@ import android.app.ProgressDialog;
 import android.app.Service;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -98,11 +100,12 @@ public class GeneralActivity extends ToolBarActivity {
     private File file;
     private ProgressDialog progressDialog;
     private ImageView uploadImageview;
-    private TextView updateTextview;
+    private TextView updateTextview,versionText;
 
     private ProgressBar progressbar;
     private TextView progressInt;
     private AlertDialog downloadingProgressDialog;
+    private boolean istoUpdate  = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,6 +121,7 @@ public class GeneralActivity extends ToolBarActivity {
                 , getString(R.string.showhand)
                 ,getString(R.string.batteryShow)
                 ,getString(R.string.firmwareupdate)
+                ,getString(R.string.version)
         };
         provider = BleService.getInstance(GeneralActivity.this).getCurrentHandlerProvider();
         BLEProviderObserverAdapterImpl bleProviderObserver = new BLEProviderObserverAdapterImpl();
@@ -161,6 +165,9 @@ public class GeneralActivity extends ToolBarActivity {
                     case 7:
                         initUpdatePopupWindow();
                         break;
+                    case 8:
+                        initVersion();
+
 
                 }
             }
@@ -169,11 +176,35 @@ public class GeneralActivity extends ToolBarActivity {
         });
     }
 
+    private void initVersion() {
+        View view = layoutInflater.inflate(R.layout.version_popwindow, null);
+        versionText = (TextView) view.findViewById(R.id.versionText);
+        //获取包管理者对象
+        PackageManager pm = getPackageManager();
+        try {
+            //获取包的详细信息
+            PackageInfo info = pm.getPackageInfo(getPackageName(), 0);
+            //获取版本号和版本名称
+            versionText.setText(info.versionName+"(Build "+info.versionCode+")");
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        final PopupWindow popupWindow = getnewPopupWindow(view);
+        ImageView dismiss = (ImageView) view.findViewById(R.id.dismiss);
+        dismiss.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+            }
+        });
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
         DfuServiceListenerHelper.registerProgressListener(this, mDfuProgressListener);
     }
+
 
 
     //固件更新
@@ -284,7 +315,9 @@ public class GeneralActivity extends ToolBarActivity {
             if (dialog_connect!=null&&dialog_connect.isShowing()) {
                 dialog_connect.dismiss();
             }
-            downloadZip(latestDeviceInfo.modelName);
+            if (istoUpdate){
+                downloadZip(latestDeviceInfo.modelName);
+            }
         }
     }
 
@@ -297,6 +330,7 @@ public class GeneralActivity extends ToolBarActivity {
             boolean networkConnected = ToolKits.isNetworkConnected(GeneralActivity.this);
             if (networkConnected){
 //                downloadZip();
+                istoUpdate = true ;
                 BleService.getInstance(GeneralActivity.this).syncAllDeviceInfo(GeneralActivity.this);
                 dialog_connect = new ProgressDialog(GeneralActivity.this);
                 dialog_connect.show();

@@ -1200,5 +1200,7 @@
     <string name="please_stay_in">更新が終わるまでこのページから移動せず、このままお待ちください</string>
     <string name="sporttime">タイム</string>
     <string name="timecannot">時間は午前0時00分に設定することはできません</string>
+    <string name="boundSuccess">バインドに成功しました</string>
+    <string name="version">バージョン</string>
 
 </resources>

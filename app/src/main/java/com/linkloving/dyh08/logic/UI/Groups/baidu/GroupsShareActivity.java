@@ -53,6 +53,7 @@ import com.linkloving.dyh08.MyApplication;
 import com.linkloving.dyh08.R;
 import com.linkloving.dyh08.basic.toolbar.ToolBarActivity;
 import com.linkloving.dyh08.db.sport.UserDeviceRecord;
+import com.linkloving.dyh08.logic.UI.Social.SocialActivity;
 import com.linkloving.dyh08.logic.UI.workout.Greendao.TraceGreendao;
 import com.linkloving.dyh08.logic.UI.workout.trackshow.TrackApplication;
 import com.linkloving.dyh08.logic.UI.workout.trackshow.WorkoutActivity;
@@ -624,6 +625,7 @@ public class GroupsShareActivity extends ToolBarActivity implements OnMapReadyCa
         qq = (ImageView) popupView.findViewById(R.id.qq);
         linkin = (ImageView) popupView.findViewById(R.id.Linkin);
         instagram = (ImageView) popupView.findViewById(R.id.instagram);
+        twitter = (ImageView) popupView.findViewById(R.id.twitter);
         popupWindow.setBackgroundDrawable(new ColorDrawable(0xffffffff));
         shareButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -729,6 +731,12 @@ public class GroupsShareActivity extends ToolBarActivity implements OnMapReadyCa
                 showShare(GroupsShareActivity.this, "Instagram", false);
             }
         });
+        twitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showShare(GroupsShareActivity.this,"Twitter",false);
+            }
+        });
     }
 
     private void showToast(boolean b) {
@@ -767,14 +775,12 @@ public class GroupsShareActivity extends ToolBarActivity implements OnMapReadyCa
         //oks.setImagePath("/sdcard/test-pic.jpg");  //分享sdcard目录下的图片
 //        oks.setImageUrl("http://99touxiang.com/public/upload/nvsheng/125/27-011820_433.jpg");
         if (BitmapFactory.decodeFile(filePathCache) == null) {
-            oks.setFilePath(filePathCacheUnder);
             oks.setImagePath(filePathCacheUnder);
         } else {
-            oks.setFilePath(filePathCacheTotal);
             oks.setImagePath(filePathCacheTotal);
         }
 
-        oks.setUrl("http://www.mob.com"); //微信不绕过审核分享链接
+//        oks.setUrl("http://www.mob.com"); //微信不绕过审核分享链接
         //oks.setFilePath("/sdcard/test-pic.jpg");  //filePath是待分享应用程序的本地路劲，仅在微信（易信）好友和Dropbox中使用，否则可以不提供
 //        oks.setComment("分享"); //我对这条分享的评论，仅在人人网和QQ空间使用，否则可以不提供
 //        oks.setSite("ShareSDK");  //QZone分享完之后返回应用时提示框上显示的名称

@@ -184,7 +184,7 @@
     <string name="lenth">Height</string>
     <string name="sign">Personal State Message</string>
     <string name="address">Region</string>
-    <string name="pesonal_activity_title">Personal Information</string>
+    <string name="pesonal_activity_title">personalPhoto</string>
     <string name="friendinfo_activity_title">Contacts</string>
 
 
@@ -1242,6 +1242,8 @@
     <string name="hint">Hint</string>
     <string name="please_stay_in">please stay in this page until update completed</string>
     <string name="timecannot">Time can not be set to 00：00</string>
+    <string name="boundSuccess">Successfully Bound</string>
+    <string name="version">版本</string>
 
 
 </resources>

@@ -32,8 +32,8 @@ android {
         applicationId "com.linkloving.dyh08"
         minSdkVersion 18
         targetSdkVersion 22
-        versionCode 58
-        versionName "5.0.8"
+        versionCode 70
+        versionName "7.1.0"
         multiDexEnabled true
         manifestPlaceholders = [HOCKEYAPP_APP_ID: "90f34b44b85a4044baee15f0144b11cd"]
     }
@@ -153,8 +153,7 @@ dependencies {
     compile files('libs/MobCommons-2016.1107.1809.jar')
     compile 'com.android.support:multidex:1.0.1'
     compile 'net.hockeyapp.android:HockeySDK:4.1.2'
-    compile 'org.greenrobot:eventbus:3.0.0'
-    provided 'de.greenrobot:eventbus-annotation-processor:3.0.0-beta1'
+
 
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
     compile 'com.squareup.retrofit2:retrofit:2.0.2'

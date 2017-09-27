@@ -98,13 +98,14 @@ public class NotificationService extends NotificationListenerService {
     @SuppressLint("NewApi")
     @Override
     public void onNotificationPosted(StatusBarNotification sbn) {
-        MyLog.e(TAG,"onNotificationPosted");
+        MyLog.e(TAG, "onNotificationPosted");
         if (MyApplication.getInstance(NotificationService.this) == null) {
             //APP还未启动的时候  获取userEntity会null
             return;
         }
         userEntity = MyApplication.getInstance(NotificationService.this).getLocalUserInfoProvider();
         provider = BleService.getInstance(NotificationService.this).getCurrentHandlerProvider();  //获取蓝牙实例
+        if (!provider.isConnectedAndDiscovered()) return;
         Notification mNotification = sbn.getNotification();
         if (mNotification != null && provider != null) {
             Bundle extras = mNotification.extras;
@@ -112,11 +113,11 @@ public class NotificationService extends NotificationListenerService {
             if (CommonUtils.isStringEmpty(extras.getString(Notification.EXTRA_TEXT))) return;
             UserEntity userAuthedInfo = PreferencesToolkits.getLocalUserInfoForLaunch(NotificationService.this);
             String last_sync_device_id = userAuthedInfo.getDeviceEntity().getLast_sync_device_id();
-            if (last_sync_device_id==null||last_sync_device_id.length()==0) return;
+            if (last_sync_device_id == null || last_sync_device_id.length() == 0) return;
 //            ModelInfo modelInfo = PreferencesToolkits.getInfoBymodelName(NotificationService.this, userEntity.getDeviceEntity().getModel_name());
 //            if (modelInfo == null) return;
             //OAD的时候取消一切其他蓝牙命令
-            if (!CommonUtils.isStringEmpty(userEntity.getDeviceEntity().getLast_sync_device_id()) && !BleService.isCANCLE_ANCS()) {
+             if (!CommonUtils.isStringEmpty(userEntity.getDeviceEntity().getLast_sync_device_id()) && !BleService.isCANCLE_ANCS()) {
 //                if (!provider.isConnectedAndDiscovered()) return; //蓝牙未连接
                 MyLog.e(TAG, "===qq/wechat的内容：" + extras.getString(Notification.EXTRA_TEXT));
                 DeviceSetting deviceSetting = LocalUserSettingsToolkits.getLocalSetting(NotificationService.this, userEntity.getUser_id() + ""); //获取用户设置 判断是否要发送指令

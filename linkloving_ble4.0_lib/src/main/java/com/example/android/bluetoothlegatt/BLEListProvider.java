@@ -137,7 +137,6 @@ public class BLEListProvider
         @Override
         public void onLeScan(final BluetoothDevice device, int rssi, byte[] scanRecord) 
         {
-
 			ParsedAd parsedAd = LPUtil.parseData(scanRecord);
 			if (parsedAd.uuidStrings.contains("fee1")){
 				//**判断是否是手环设备*//
@@ -147,7 +146,6 @@ public class BLEListProvider
 				msg.obj = device;
 				msg.sendToTarget();
 			}
-
 		}
     };
 

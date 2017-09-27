@@ -61,6 +61,7 @@ public class SMSBroadcastReceiver extends BroadcastReceiver {
 		String last_sync_device_id = userAuthedInfo.getDeviceEntity().getLast_sync_device_id();
 		if (last_sync_device_id==null||last_sync_device_id.length()==0) return;
 		 provider = BleService.getInstance(context).getCurrentHandlerProvider();
+		if(!provider.isConnectedAndDiscovered()) return;
 		MyLog.e(TAG,"========SMSBroadcastReceiver========");
 		 DeviceSetting deviceSetting = LocalUserSettingsToolkits.getLocalSetting(context, MyApplication.getInstance(context).getLocalUserInfoProvider().getUser_id()+"");
 		 String Ansc_str = Integer.toBinaryString(deviceSetting.getAncs_value());

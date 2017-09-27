@@ -68,8 +68,8 @@ public class GreendaoUtils {
 
     }
 
-    public void addwhole(int starttime , int  max ,int avg,int fakeMax,int fakeAvg){
-        heartrate heartrate = new heartrate(null, starttime,  avg,max,fakeAvg,fakeMax);
+    public void addwhole(int starttime , int  avg ,int max,int fakeMax,int fakeAvg){
+        heartrate heartrate = new heartrate(null, starttime,  max,avg,fakeAvg,fakeMax);
         getHeartrateDao().insertOrReplace(heartrate);
 
     }
@@ -85,7 +85,9 @@ public class GreendaoUtils {
     public   List<heartrate>  search(int  starttime){
         Query<heartrate> list = getHeartrateDao().queryBuilder()
                 .where(heartrateDao.Properties.StartTime.eq(starttime),heartrateDao.Properties.Avg.lt(170)
-                        ,heartrateDao.Properties.Avg.gt(50))
+                        ,heartrateDao.Properties.Avg.gt(50)
+                        ,heartrateDao.Properties.Max.lt(170)
+                        ,heartrateDao.Properties.Max.gt(50))
                 .orderAsc(heartrateDao.Properties.Id)
                 .build();
         List<heartrate> heartrateList = list.list();
@@ -98,7 +100,9 @@ public class GreendaoUtils {
     public List<heartrate> searchDurationFiveMinute(long starttime){
         Query<heartrate> list = getHeartrateDao().queryBuilder().where(heartrateDao.Properties.StartTime.between(starttime, starttime + HALFFIVEMILLIONS)
                 ,heartrateDao.Properties.Avg.lt(170)
-                ,heartrateDao.Properties.Avg.gt(50))
+                ,heartrateDao.Properties.Avg.gt(50)
+                ,heartrateDao.Properties.Max.lt(170)
+                ,heartrateDao.Properties.Max.gt(50))
                 .orderAsc(heartrateDao.Properties.Id).build();
         List<heartrate> heartrateList = list.list();
             return heartrateList ;
@@ -107,7 +111,9 @@ public class GreendaoUtils {
     public List<heartrate> searchAllRecord(){
         Query<heartrate> build = getHeartrateDao().queryBuilder()
                 .where(heartrateDao.Properties.Id.isNotNull(),heartrateDao.Properties.Avg.lt(170)
-                        ,heartrateDao.Properties.Avg.gt(50))
+                        ,heartrateDao.Properties.Avg.gt(50)
+                        ,heartrateDao.Properties.Max.lt(170)
+                        ,heartrateDao.Properties.Max.gt(50))
                 .orderAsc(heartrateDao.Properties.Id).build();
         List<heartrate> list = build.list();
         return list ;
@@ -119,7 +125,9 @@ public class GreendaoUtils {
 
     public List<heartrate> searchAll(){
         List<heartrate> heartrates = getHeartrateDao().queryBuilder().where(heartrateDao.Properties.Avg.lt(170)
-                ,heartrateDao.Properties.Avg.gt(50))
+                ,heartrateDao.Properties.Avg.gt(50)
+                ,heartrateDao.Properties.Max.lt(170)
+                ,heartrateDao.Properties.Max.gt(50))
                 .orderAsc(heartrateDao.Properties.Id).list();
         return heartrates;
     }
@@ -135,7 +143,9 @@ public class GreendaoUtils {
         Query<heartrate> list = getHeartrateDao().queryBuilder()
                 .where(heartrateDao.Properties.StartTime.between(starttime/1000,endtime/1000)
                 ,heartrateDao.Properties.Avg.lt(170)
-                ,heartrateDao.Properties.Avg.gt(50))
+                ,heartrateDao.Properties.Avg.gt(50)
+                        ,heartrateDao.Properties.Max.lt(170)
+                        ,heartrateDao.Properties.Max.gt(50))
                 .orderAsc(heartrateDao.Properties.Id)
                 .build();
         List<heartrate> heartrateList = list.list();

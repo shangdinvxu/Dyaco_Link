@@ -57,6 +57,7 @@ public class PhoneReceiver extends BroadcastReceiver {
 			return;
 		}*/
 		provider = BleService.getInstance(context).getCurrentHandlerProvider();
+		if(!provider.isConnectedAndDiscovered()) return;
 		MyLog.e(TAG,"========PhoneReceiver========");
 		DeviceSetting deviceSetting = LocalUserSettingsToolkits.getLocalSetting(context, MyApplication.getInstance(context).getLocalUserInfoProvider().getUser_id()+"");
 		String Ansc_str = Integer.toBinaryString(deviceSetting.getAncs_value());
@@ -99,14 +100,12 @@ public class PhoneReceiver extends BroadcastReceiver {
 			MyLog.e(TAG,"state"+state);
 			switch(state){
 				 case TelephonyManager.CALL_STATE_IDLE:
-					   
 					    //移除来电
 					    if(provider.isConnectedAndDiscovered() && array_phone[3] == '1' && NotificationService.phoneinidle_count==0 && NotificationService.phoneinhook_count!=1){
 					    	 Log.i(TAG, "挂断");  
 					    	 NotificationService.phoneinhook_count=0;
 					    	 NotificationService.phoneincall_count=0;
 					    	 NotificationService.phoneinidle_count++;
-
 					    	provider.setNotification_remove_incall(context,NotificationService.incallphone,NotificationService.incallphone_title,NotificationService.incallphone_title);
 					    	 
 					    	 /**为确保万一*/
